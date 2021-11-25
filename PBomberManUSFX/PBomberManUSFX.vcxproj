@@ -221,6 +221,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="resources\bomber.bmp" />
+    <Image Include="resources\bomber.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,8 +5,8 @@
 #include "../Scenes/MenuScene.h"
 #include "../Scenes/StageScene.h"
 
-StageScene::StageScene(GameManager* _gameManager, const unsigned int level, const unsigned int _score)
-    : Scene(_gameManager), stage(level), score(_score)
+StageScene::StageScene(GameManager* _gameManager, const unsigned int level, const unsigned int _score, const unsigned gameType)
+    : Scene(_gameManager), stage(level), score(_score), gameType()
 {
     // stage text
     auto text = std::make_shared<Text>(gameManager->getAssetManager()->getFont(), gameManager->getRenderer(),
@@ -24,7 +24,7 @@ void StageScene::update(const unsigned int delta)
     if(untilNextSceneTimer >= sceneTimer)
     {
         untilNextSceneTimer = 0;
-        gameManager->getSceneManager()->addScene("level", std::make_shared<LevelScene>(gameManager, stage, score));
+        gameManager->getSceneManager()->addScene("level", std::make_shared<LevelScene>(gameManager, stage, score, gameType));
         gameManager->getSceneManager()->activateScene("level");
         gameManager->getSceneManager()->removeScene("stage");
     }

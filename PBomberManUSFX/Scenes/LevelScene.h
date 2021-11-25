@@ -16,6 +16,7 @@
 #include "../Entities/Sound.h"
 #include "../Entities/Text.h"
 #include "../Scenes/Scene.h"
+#include "../Scenes/MenuScene.h"
 #include "../Factories/Factory.h"
 #include "../Factories/FactoryGameClasico.h"
 #include "../Factories/FactoryGameCartoon.h"
@@ -36,7 +37,7 @@ public:
         * @param game - game pointer
         * @param stage - stage number
         */
-    LevelScene(GameManager* game, const unsigned int stage, const unsigned int prevScore);
+    LevelScene(GameManager* game, const unsigned int stage, const unsigned int prevScore, const unsigned fac_gameType);
     /**
         * @brief Catch SDL2 events
         *
@@ -148,6 +149,7 @@ private:
     // variables
     unsigned int score = 0;
     unsigned int stage = 0;
+    unsigned int gameType = 0;
 
     // level positioning
     int fieldPositionX = 0;

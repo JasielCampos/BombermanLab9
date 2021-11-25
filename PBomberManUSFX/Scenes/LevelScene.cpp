@@ -11,15 +11,19 @@
 #include "../Scenes/StageScene.h"
 #include "../Util/Pathfinding.h"
 
-LevelScene::LevelScene(GameManager* _gameManager, const unsigned int _stage, const unsigned int prevScore)
-    : Scene(_gameManager), score(prevScore), stage(_stage)
+LevelScene::LevelScene(GameManager* _gameManager, const unsigned int _stage, const unsigned int prevScore, const unsigned int fac_gameType)
+    : Scene(_gameManager), score(prevScore), stage(_stage), gameType(fac_gameType)
 {
-    int factoryGameType = 1;
+    //MenuScene* factoryGameType = nullptr;
+    //factoryGameType = MenuScene::onMenuItemPress();
+    /*int factoryGameType = 1;*/
+    //MenuScene* _menu;
+    //GameType= gameManager->onMenuItemPress();
 
-    if (factoryGameType == 0) {
+    if (gameType == 1) {
         factory = new FactoryGameCartoon();
     }
-    else if(factoryGameType == 1) {
+    else if(gameType == 2) {
         factory = new FactoryGameClasico();
     }
     

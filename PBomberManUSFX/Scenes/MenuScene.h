@@ -50,6 +50,7 @@ class MenuScene : public Scene
         * @param event - SDL2 event
         */
     virtual void onEvent(const SDL_Event& event) override;
+    int onMenuItemPress();
 
     private:
     /**
@@ -61,7 +62,7 @@ class MenuScene : public Scene
         * @brief called when menu item was pressed
         *
         */
-    void onMenuItemPress();
+    //int onMenuItemPress();
 
     //std::shared_ptr<Text> startText = nullptr;      // menu start
     //Text* startText = nullptr; Es lo mismo que la linea anterior

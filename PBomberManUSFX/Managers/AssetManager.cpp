@@ -8,12 +8,13 @@ void AssetManager::load(SDL_Renderer* renderer)
     // load font
     loadFont();
     // load textures
-    loadTexture(renderer, Texture::MenuBack, "assets/menu_title.png");
+    loadTexture(renderer, Texture::MenuBack, "assets/title.png");
     loadTexture(renderer, Texture::Metal, "resources/muro_metal.jpg");
     loadTexture(renderer, Texture::Stone, "resources/muro_piedra_01.png");
     loadTexture(renderer, Texture::Grass, "resources/suelo_cesped_01.png");
     loadTexture(renderer, Texture::Brick, "resources/muro_ceramica_01.png");
     loadTexture(renderer, Texture::Player, "assets/player.png");
+    loadTexture(renderer, Texture::Player1, "resources/bman3.png");
     loadTexture(renderer, Texture::Enemy1, "assets/enemy_1.png");
     loadTexture(renderer, Texture::Enemy2, "assets/enemy_2.png");
     loadTexture(renderer, Texture::Enemy3, "assets/enemy_3.png");
@@ -56,7 +57,7 @@ std::shared_ptr<Mix_Chunk> AssetManager::getSound(SoundEnum sound)
 void AssetManager::loadFont()
 {
     // load font
-    font = std::shared_ptr<TTF_Font>(TTF_OpenFont("assets/font.ttf", 32), TTF_CloseFont);
+    font = std::shared_ptr<TTF_Font>(TTF_OpenFont("assets/bman.ttf", 32), TTF_CloseFont);
     if(!font)
     {
         std::cout << "TTF_OpenFont Error: " << TTF_GetError() << std::endl;

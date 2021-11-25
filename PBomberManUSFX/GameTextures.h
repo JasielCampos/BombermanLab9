@@ -8,6 +8,7 @@ enum class Texture : int
     Grass,
     Brick,
     Player,
+    Player1,
     Enemy1,
     Enemy2,
     Enemy3,

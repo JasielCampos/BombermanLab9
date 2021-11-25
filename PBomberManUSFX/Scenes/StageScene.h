@@ -19,7 +19,7 @@ class StageScene : public Scene
         *
         * @param game
         */
-    StageScene(GameManager* _gameManager, const unsigned int level, const unsigned int score);
+    StageScene(GameManager* _gameManager, const unsigned int level, const unsigned int score, const unsigned gameType);
     /**
         * @brief Trigger on update if scene is active
         *
@@ -34,6 +34,7 @@ class StageScene : public Scene
     const int sceneTimer = 2000;
     unsigned int stage = 0;
     unsigned int score = 0;
+    unsigned int gameType = 0;
 };
 
 #endif // _BOMBERMAN_SCENES_STAGE_SCENE_H_
